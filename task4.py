@@ -4,3 +4,5 @@
 # - 3 -> 11
 # - 2 -> 10
 
+user_number = int(input('Введите число N: '))
+print(f'{user_number} -> {bin(user_number)}')

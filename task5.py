@@ -5,24 +5,23 @@
 
 number_row_length = int(input('Введите длину ряда: '))
 
-fibonacci1 = []
+fibonacci_positive = []
 for i in range(0, number_row_length+1):
     if i == 0:
-        fibonacci1.insert(i, i)
+        fibonacci_positive.insert(i, i)
     elif i == 1:
-        fibonacci1.insert(i, i)
+        fibonacci_positive.insert(i, i)
     else:
-        fibonacci1.append(fibonacci1[i-1]+fibonacci1[i-2])
+        fibonacci_positive.append(
+            fibonacci_positive[i-1]+fibonacci_positive[i-2])
 
-fibonacci2 = []
+fibonacci_negative = []
 for i in range(1, number_row_length+1):
     if i == 1:
-        fibonacci2.insert(i, i)
+        fibonacci_negative.insert(i, i)
     else:
-        fibonacci2.append(((-1)**(i+1))*fibonacci1[i])
-        
-fibonacci2.reverse()
-print(fibonacci1)
-print(fibonacci2)
-print(fibonacci2+fibonacci1)
+        fibonacci_negative.append(((-1)**(i+1))*fibonacci_positive[i])
 
+fibonacci_negative.reverse()
+fibonacci = fibonacci_negative + fibonacci_positive
+print(f'Для N = {number_row_length} -> Негафибоначчи {fibonacci}')
